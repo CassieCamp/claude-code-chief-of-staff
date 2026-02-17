@@ -1,0 +1,1 @@
+📡 This folder is where external data lands — calendar exports, meeting transcripts, wearable data, etc. It starts empty. See [[⭐ Getting Started#Step 7 Set Up Integrations Optional]] for setup options.
