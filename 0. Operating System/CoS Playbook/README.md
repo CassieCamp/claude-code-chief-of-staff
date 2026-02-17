@@ -8,18 +8,18 @@ Operational details for the Chief of Staff system. Claude reads this when execut
 
 Not all files are equal. Claude should know what it can freely edit vs. what requires user approval to change.
 
-| File / Area | Claude Can | Claude Cannot (without explicit approval) |
-|-------------|-----------|-------------------------------------------|
-| 📂 **Life domain folders** | Add context, update notes, create new docs | Add backlog sections — tasks go in [[✅ Backlog]] only |
-| ✅ **[[✅ Backlog]]** | Add/update/complete rows | Add or remove life area sections without explicit approval from the end-user, change table format |
-| 📅 **Weekly Plans** | Create new weeks, add/check tasks | Veer from the Weekly Log Template without explicit approval from the end-user |
-| 🧠 **CLAUDE.md** | — | Any changes (system design only) without explicit approval from the end-user |
-| 📖 **CoS Playbook** | — | Any changes (system design only) without explicit approval from the end-user |
-| 🔭 **[[🔭 Whole Life Strategy]]** | — | Any changes (user-driven, annual review) without explicit approval from the end-user |
-| 🎯 **[[🎯 Quarterly Plan]]** | — | Any changes (user-driven, quarterly review) without explicit approval from the end-user |
-| 🪞 **[[🪞 User Profile]]** | — | Any changes (user-driven) without explicit approval from the end-user |
-| 🧰 **Toolkit tools** | — | Install, modify, or remove tools (user decides) without explicit approval from the end-user |
-| 📡 **Integrations** | — | Add or change integrations (user decides) without explicit approval from the end-user |
+| File / Area                    | Claude Can                                 | Claude Cannot (without explicit approval)                                                         |
+| ------------------------------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| 📂 **Life domain folders**     | Add context, update notes, create new docs | Add backlog sections — tasks go in [[✅ Backlog]] only                                             |
+| **[[✅ Backlog]]**              | Add/update/complete rows                   | Add or remove life area sections without explicit approval from the end-user, change table format |
+| 📅 **Weekly Plans**            | Create new weeks, add/check tasks          | Veer from the Weekly Log Template without explicit approval from the end-user                     |
+| 🧠 **CLAUDE.md**               | —                                          | Any changes (system design only) without explicit approval from the end-user                      |
+| 📖 **CoS Playbook**            | —                                          | Any changes (system design only) without explicit approval from the end-user                      |
+| **[[🔭 Whole Life Strategy]]** | —                                          | Any changes (user-driven, annual review) without explicit approval from the end-user              |
+| **[[🎯 Quarterly Plan]]**      | —                                          | Any changes (user-driven, quarterly review) without explicit approval from the end-user           |
+| **[[🪞 User Profile]]**        | —                                          | Any changes (user-driven) without explicit approval from the end-user                             |
+| 🧰 **Toolkit tools**           | —                                          | Install, modify, or remove tools (user decides) without explicit approval from the end-user       |
+| 📡 **Integrations**            | —                                          | Add or change integrations (user decides) without explicit approval from the end-user             |
 
 **Rule of thumb:** Claude freely edits *content* (tasks, context, weekly plans). Claude never restructures the *system* (templates, formats, file architecture) without explicit ask. When approval is required, Claude must surface a warning and wait for the user to confirm before proceeding. ⚠️
 
@@ -49,14 +49,15 @@ Not all files are equal. Claude should know what it can freely edit vs. what req
 1. Read `todays-calendar.md` for fixed commitments (meetings, appointments)
 2. Read today's section from `Week of [Date].md` for planned tasks
 3. ⌚ Wearable check-in (see Integrations below)
-4. Present today's calendar + tasks, then help time-block:
+4. 🧰 Check installed Toolkit tools for daily practice prompts (see Installed Toolkit below)
+5. Present today's calendar + tasks, then help time-block:
    - 📌 Place fixed commitments first (meetings, appointments)
    - Fill open blocks with tasks from today's plan, matched to energy:
      - 🧠 **Deep work** (90-min blocks) → morning / high-energy windows
      - 📝 **Admin/noise** → low-energy windows or between meetings
      - 🫧 **Buffer** → leave gaps for reactive work
    - 🚩 Flag conflicts (too many tasks for available time)
-5. Offer to create calendar events for time blocks if user has a shortcut configured
+6. Offer to create calendar events for time blocks if user has a shortcut configured
 
 ### 📅 "Plan My Week" — Sunday
 
@@ -64,12 +65,13 @@ Not all files are equal. Claude should know what it can freely edit vs. what req
 2. 📋 Read [[✅ Backlog]] — due dates, blocked/waiting items, review dates
 3. 🎯 Check Quarterly Plan for strategic priorities
 4. ⌚ Wearable check-in — shape week's energy arc by cycle phase
-5. ✏️ Draft weekly plan:
+5. 🧰 Check installed Toolkit tools for weekly practice prompts (see Installed Toolkit below)
+6. ✏️ Draft weekly plan:
    - Match task difficulty to energy arc
    - Max 5 items per day ⚠️
    - 80% signal, 20% noise
    - Buffer for reactive work
-6. After approval, write to `0. Operating System/Weekly Plans/Week of [Date].md`
+7. After approval, write to `0. Operating System/Weekly Plans/Week of [Date].md`
 
 ### 👋 "TTFN" — End of Session
 
@@ -98,6 +100,28 @@ Terminal sessions don't persist. Nothing discussed should live only in working m
 - 😴 **Sleep < 70:** Shorter focus blocks, no deep work before 11am
 - ⚡ **Activity > 85:** High energy — front-load hard tasks
 - 🌙 **Cycle Day (if applicable):** Days 1-5 = lighter load; 6-13 = ramp up; 14-16 = peak energy; 17-28 = wind down
+
+---
+
+## 🧰 Installed Toolkit
+
+Coaching frameworks Claude applies during rituals. Each tool file has a "Claude Integration" section with practice triggers. Only apply tools marked **Active** below.
+
+| Tool | Active? |
+|------|---------|
+| ⚛️ Atomic Habits — James Clear | ❌ |
+| 🪩 Never Search Alone — Phyl Terry | ❌ |
+| 🚣 The Deep Life — Cal Newport | ❌ |
+| 🎨 The Artist's Way — Julia Cameron | ❌ |
+| ✨ To Be Magnetic | ❌ |
+
+**How tools connect to rituals:**
+- ☀️ **Good Morning** → Check installed tools for **daily** practice prompts (e.g., Morning Pages streak, habit check-in)
+- 📅 **Plan My Week** → Check installed tools for **weekly** practice prompts (e.g., schedule Artist Date, council commitment, Amplify/Reduce review)
+- 📊 **Debrief** → Check installed tools for any **reactive** triggers relevant to the current conversation
+- 🎯 **Quarterly/Annual Review** → Run each installed tool's quarterly or annual review prompts
+
+**Installing a tool:** Add a row to the table above, set Active to ✅, and Claude will begin applying its triggers during rituals. To pause a tool, change Active to ❌ — Claude will stop surfacing it without deleting the file. 🔧
 
 ---
 

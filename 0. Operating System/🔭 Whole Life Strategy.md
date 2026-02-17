@@ -71,13 +71,6 @@ The north star. Read this when you're lost, overwhelmed, or making a big decisio
 
 ---
 
-## 🧰 Installed Toolkit
-
-| Tool | Focus | Active? |
-|------|-------|---------|
-| [[🚣 The Deep Life — Cal Newport]] | Lifestyle-centric planning, five buckets, career capital, review cadences | |
-| | | |
-
 ---
 
 *Last updated:*

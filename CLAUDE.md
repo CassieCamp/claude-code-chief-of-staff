@@ -61,7 +61,7 @@ All ritual specs, integration configs, task routing rules, coaching prompts, and
 
 **`0. Operating System/CoS Playbook/README.md`** — Read this when executing any ritual or routing tasks.
 
-**`0. Operating System/Toolkit/`** — Read individual tools when their triggers fire. Each has a "Claude Integration" section. Only apply tools marked **Active** in [[🔭 Whole Life Strategy#Installed Toolkit]].
+**`0. Operating System/Toolkit/`** — Read individual tools when their triggers fire. Each has a "Claude Integration" section. Only apply tools marked **Active** in the Installed Toolkit table in the CoS Playbook.
 
 ---
 
