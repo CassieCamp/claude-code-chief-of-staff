@@ -1,4 +1,4 @@
-# 📖 Cal Newport — Lifestyle-Centric Planning + The Deep Life
+# 🚣 The Deep Life — Cal Newport
 
 > *"You don't need to know your One True Passion. You need a promising path that can be shaped over time as you accumulate leverage."* 💡
 >

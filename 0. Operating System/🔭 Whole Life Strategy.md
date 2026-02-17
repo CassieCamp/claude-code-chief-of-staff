@@ -2,7 +2,7 @@
 
 The north star. Read this when you're lost, overwhelmed, or making a big decision. Everything else flows from here. 🌟
 
-**Frameworks:** [[📖 Cal Newport]]
+**Frameworks:** [[🚣 The Deep Life — Cal Newport]]
 
 ```
 🔭 Whole Life Strategy (WHERE AM I GOING?)
@@ -75,7 +75,7 @@ The north star. Read this when you're lost, overwhelmed, or making a big decisio
 
 | Tool | Focus | Active? |
 |------|-------|---------|
-| [[📖 Cal Newport]] | Lifestyle-centric planning, five buckets, career capital, review cadences | |
+| [[🚣 The Deep Life — Cal Newport]] | Lifestyle-centric planning, five buckets, career capital, review cadences | |
 | | | |
 
 ---

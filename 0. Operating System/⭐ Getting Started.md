@@ -235,7 +235,7 @@ Don't start here. Upgrade to this tier only when Tier 1-3 bridges create real fr
 The Toolkit is where you install frameworks you want Claude to use when coaching you. Browse `0. Operating System/Toolkit/` for existing tools, or create your own from `_Tool Template.md`.
 
 You don't need any toolkit tools to get started. Install them when you have a specific need:
-- 📖 Want help with life design + balance? → Install [[📖 Cal Newport]]
+- 🚣 Want help with life design + balance? → Install [[🚣 The Deep Life — Cal Newport]]
 - ⚛️ Want to build better habits? → Install [[⚛️ Atomic Habits — James Clear]]
 - 🎨 Want to unlock creativity? → Install [[🎨 The Artist's Way — Julia Cameron]]
 - 🪩 In a career transition? → Install [[🪩 Never Search Alone — Phyl Terry]]
