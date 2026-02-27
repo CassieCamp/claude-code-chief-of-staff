@@ -31,7 +31,7 @@ Not all files are equal. Claude should know what it can freely edit vs. what req
 
 *"What do I need to know across my whole life?"* 🌊
 
-1. Read current `Week of [Date].md` — what's done, what's left
+1. Strategic focus is pre-loaded by the **session start hook**. Read the full `Week of [Date].md` for task status (done vs. remaining).
 2. Read `Quarterly Plan.md` — any shifts needed?
 3. Read [[✅ Backlog]] — top items, approaching due dates, blocked/waiting items
 4. Present:
@@ -46,9 +46,9 @@ Not all files are equal. Claude should know what it can freely edit vs. what req
 
 *"What does today look like and how do I time-block it?"* 🗓️
 
-1. Read `Integrations/todays-calendar.md` for fixed commitments (meetings, appointments)
-2. Read today's section from `Week of [Date].md` for planned tasks
-3. Read `Integrations/brain-dump.md` — if new items exist, triage: route to [[✅ Backlog]], add to weekly plan, or drop. After triage, tell user to clear their capture note.
+1. Calendar, weekly focus, and brain dump are pre-loaded by the **session start hook** (see Integrations below). Confirm data looks current — if stale, re-read the source files.
+2. Read today's section from `Week of [Date].md` for planned tasks (the hook only loads the strategic header, not daily breakdowns)
+3. Triage brain dump from pre-loaded data — if new items exist, route to [[✅ Backlog]], add to weekly plan, or drop. After triage, tell user to clear their capture note.
 4. ⌚ Wearable check-in (see Integrations below)
 5. 🧰 Check installed Toolkit tools for daily practice prompts (see Installed Toolkit below)
 6. Present today's calendar + tasks, then help time-block:
@@ -112,7 +112,34 @@ Terminal sessions don't persist. Nothing discussed should live only in working m
 | ⌚ **Wearable** | Manual — ask user | Not stored | Good Morning + Plan My Week |
 | 📧 **Email** | Copy/paste | Not stored | When user pastes (see Email Processing) |
 
-**⌚ Wearable check-in prompt:** "Wearable check-in: Readiness, Sleep, Activity, Cycle Day?"
+### 🚀 Session Start Hook
+
+A Claude Code hook (`.claude/hooks/session-start.sh`) fires automatically on every new session and after context compaction. It pre-loads deterministic context so rituals can focus on planning and judgment.
+
+**What gets injected:**
+| Data | Source | Fallback |
+|------|--------|----------|
+| Today's date (ISO, day of week, formatted) | `date` command | — |
+| Today's calendar | `Integrations/todays-calendar.md` | "No calendar data found." |
+| Weekly strategic focus (header before first `---`) | Most recent `Week of YYYY-MM-DD.md` where date ≤ today | "No weekly plan found. Consider running Plan My Week." |
+| Brain dump | `Integrations/brain-dump.md` | Omitted (null) if empty |
+
+**Fires on:** `startup` (new session), `compact` (context compaction)
+**Does NOT fire on:** `resume`, `clear`
+
+**What this means for rituals:**
+- Good Morning and Debrief no longer need to re-read calendar, weekly focus, or brain dump — they're already in context
+- Good Morning still reads today's daily section from the weekly plan (hook only loads the header)
+- Debrief still reads the full weekly plan for task-level status
+- If data looks stale, re-read the source files manually
+
+**⌚ Wearable check-in prompt:** "Oura scores?" (or equivalent wearable) — User gives 4 numbers in this exact order:
+1. **Readiness** (1st number)
+2. **Sleep** (2nd number)
+3. **Activity** (3rd number)
+4. **Cycle Day** (4th number)
+
+**Thresholds:**
 - 🔴 **Readiness < 70:** Recovery day — lighter tasks, no deep work
 - 😴 **Sleep < 70:** Shorter focus blocks, no deep work before 11am
 - ⚡ **Activity > 85:** High energy — front-load hard tasks
