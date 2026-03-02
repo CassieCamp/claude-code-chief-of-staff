@@ -1,8 +1,6 @@
 # 🔭 Whole Life Strategy
 
-The north star. Read this when you're lost, overwhelmed, or making a big decision. Everything else flows from here. 🌟
-
-**Frameworks:** [[🚣 The Deep Life — Cal Newport]]
+The north star. Read this when you're lost, overwhelmed, or making a big decision. Everything else flows from here.
 
 ```
 🔭 Whole Life Strategy (WHERE AM I GOING?)
